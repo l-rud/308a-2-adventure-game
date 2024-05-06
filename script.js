@@ -7,13 +7,14 @@ const adventurer = {
       name: "Leo",
       type: "Cat",
     },
-   
+    
   };
-  //Add a “companion” sub-object to “Leo”
+  adventurer.inventory.forEach((item) => {
+    console.log(item);
+  });
   adventurer.companion.companion2 = {
     name: "Frank",
     type: "Flea",
     belongings: ["hat", "sunglasses"],
   };
   console.log(adventurer);
-  
