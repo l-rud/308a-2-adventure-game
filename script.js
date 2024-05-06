@@ -82,4 +82,9 @@ class Adventurer extends Character {
       console.log(`${this.name} is scouting ahead...`);
       super.roll();
     }
+    // Adventurers have the ability to search for artifacts.
+    searchingForArtifacts () {
+        console.log(`${this.name} is search for artifacts...`);
+        super.roll();
+      }
   }
