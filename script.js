@@ -26,3 +26,16 @@ adventurer.companion.companion2 = {
 console.log(adventurer);
 //Test the “dice rolls” method by calling adventurer.roll():
 adventurer.roll();
+
+//Part 2: Class Fantasy
+
+    /* Basic Character class looks like so far, 
+    including a constructor function that allows us to create new characters 
+    with whatever name we would like: */
+    class Character {
+        constructor (name) {
+          this.name = name;
+          this.health = 100;
+          this.inventory = [];
+        }
+    }
