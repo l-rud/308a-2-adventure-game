@@ -7,4 +7,13 @@ const adventurer = {
       name: "Leo",
       type: "Cat",
     },
-}
+   
+  };
+  //Add a “companion” sub-object to “Leo”
+  adventurer.companion.companion2 = {
+    name: "Frank",
+    type: "Flea",
+    belongings: ["hat", "sunglasses"],
+  };
+  console.log(adventurer);
+  
