@@ -13,7 +13,9 @@ const adventurer = {
         console.log(`${this.name} rolled a ${result}.`);
     },
 };
-//Create a loop that logs each item in Robin’s inventory
+
+//Use  the forEach method to iterates over each element in the inventory array 
+//and logs each element to the console:
 adventurer.inventory.forEach((item) => {
     console.log(item);
 });
@@ -54,3 +56,13 @@ robin.companion.companion.type = "Flea";
 robin.companion.companion.inventory = ["small hat", "sunglasses"];
 
 console.log(robin);
+
+//In order to effectively create companions, 
+//we need to extend the Character class for added specificity:
+
+class Companion extends Character {
+    constructor(name, type) {
+        super(name);
+        this.type = type;
+    }
+}
