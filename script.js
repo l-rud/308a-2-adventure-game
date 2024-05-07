@@ -46,16 +46,6 @@ class Character {
         console.log(`${this.name} rolled a ${result}.`)
     }
 }
-//Re-create Robin using the Character class:
-const robin = new Character("Robin");
-robin.inventory = ["sword", "potion", "artifact"];
-robin.companion = new Character("Leo");
-robin.companion.type = "Cat";
-robin.companion.companion = new Character("Frank");
-robin.companion.companion.type = "Flea";
-robin.companion.companion.inventory = ["small hat", "sunglasses"];
-
-console.log(robin);
 
 //In order to effectively create companions, 
 //we need to extend the Character class for added specificity:
@@ -84,7 +74,21 @@ class Adventurer extends Character {
     }
     // Adventurers have the ability to search for artifacts.
     searchingForArtifacts () {
-        console.log(`${this.name} is search for artifacts...`);
+        console.log(`${this.name} search for artifacts...`);
         super.roll();
       }
   }
+
+//Create Robin using the Adventurer class:
+const robin = new Adventurer ("Robin", "Scout");
+//Adding new items to the adventurer's inventory:
+robin.inventory.push.apply(robin.inventory, ["sword", "potion", "artifact"]);
+//Create first companion using the Companion class:
+robin.companion = new Companion("Leo", "Cat");
+//Create second companion using the Companion class:
+robin.companion.companion = new Companion("Frank", "Flea");
+robin.companion.companion.inventory = ["small hat", "sunglasses"];
+
+console.log(robin);
+robin.scout();
+robin.searchingForArtifacts();
