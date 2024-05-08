@@ -1,4 +1,5 @@
 //Part 1: Humble Beginnings
+
 const adventurer = {
     name: "Robin",
     health: 10,
@@ -29,12 +30,14 @@ console.log(adventurer);
 //Test the “dice rolls” method by calling adventurer.roll():
 adventurer.roll();
 
+
 //Part 2: Class Fantasy
 
 /* Basic Character class looks like so far, 
 including a constructor function that allows us to create new characters 
 with whatever name we would like: */
 class Character {
+    static MAX_HEALTH = 100;
     constructor(name) {
         this.name = name;
         this.health = 100;
@@ -56,31 +59,33 @@ class Companion extends Character {
         this.type = type;
     }
 }
+
+
 //Part 3: Class Features
 
 //Let’s begin by creating an Adventurer class. 
 class Adventurer extends Character {
-    constructor (name, role) {
-      super(name);
-      // Adventurers have specialized roles.
-      this.role = role;
-      // Every adventurer starts with a bed and 50 gold coins.
-      this.inventory.push("bedroll", "50 gold coins");
+    constructor(name, role) {
+        super(name);
+        // Adventurers have specialized roles.
+        this.role = role;
+        // Every adventurer starts with a bed and 50 gold coins.
+        this.inventory.push("bedroll", "50 gold coins");
     }
     // Adventurers have the ability to scout ahead of them.
-    scout () {
-      console.log(`${this.name} is scouting ahead...`);
-      super.roll();
+    scout() {
+        console.log(`${this.name} is scouting ahead...`);
+        super.roll();
     }
     // Adventurers have the ability to search for artifacts.
-    searchingForArtifacts () {
+    searchingForArtifacts() {
         console.log(`${this.name} search for artifacts...`);
         super.roll();
-      }
-  }
+    }
+}
 
 //Create Robin using the Adventurer class:
-const robin = new Adventurer ("Robin", "Scout");
+const robin = new Adventurer("Robin", "Scout");
 //Adding new items to the adventurer's inventory:
 robin.inventory.push.apply(robin.inventory, ["sword", "potion", "artifact"]);
 //Create first companion using the Companion class:
@@ -92,3 +97,8 @@ robin.companion.companion.inventory = ["small hat", "sunglasses"];
 console.log(robin);
 robin.scout();
 robin.searchingForArtifacts();
+
+
+//Part 4: Class Uniforms
+
+//Add a static MAX_HEALTH property to the Character class, equal to 100 (line 40)
