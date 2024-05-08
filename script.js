@@ -65,6 +65,7 @@ class Companion extends Character {
 
 //Let’s begin by creating an Adventurer class. 
 class Adventurer extends Character {
+    static ROLES = ["Fighter", "Healer", "Wizard"];
     constructor(name, role) {
         super(name);
         // Adventurers have specialized roles.
@@ -102,3 +103,4 @@ robin.searchingForArtifacts();
 //Part 4: Class Uniforms
 
 //Add a static MAX_HEALTH property to the Character class, equal to 100 (line 40)
+//Add a static ROLES array to the Adventurer class, with the values “Fighter,” “Healer,” and “Wizard.”(line 68)
