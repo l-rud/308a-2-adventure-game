@@ -80,7 +80,7 @@ class Adventurer extends Character {
     }
     // Adventurers have the ability to search for artifacts.
     searchingForArtifacts() {
-        console.log(`${this.name} search for artifacts...`);
+        console.log(`${this.name} searches for artifacts...`);
         super.roll();
     }
 }
@@ -104,3 +104,29 @@ robin.searchingForArtifacts();
 
 //Add a static MAX_HEALTH property to the Character class, equal to 100 (line 40)
 //Add a static ROLES array to the Adventurer class, with the values “Fighter,” “Healer,” and “Wizard.”(line 68)
+
+
+//Part 5: Gather your Party
+
+// Create many “healer” role adventurers using a factory function:
+class AdventurerFactory {
+    constructor(role) {
+        this.role = role;
+        this.adventurers = [];
+    }
+    generate(name) {
+        const newAdventurer = new Adventurer(name, this.role);
+        this.adventurers.push(newAdventurer);
+    }
+    findByIndex(index) {
+        return this.adventurers[index];
+    }
+    findByName(name) {
+        return this.adventurers.find((a) => a.name === name);
+    }
+}
+
+const healers = new AdventurerFactory("Healer");
+healers.generate("Robin2");
+const robin2 = healers.findByIndex(0);
+console.log(robin2);
